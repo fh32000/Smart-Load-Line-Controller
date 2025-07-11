@@ -18,6 +18,18 @@ export default defineConfig({
     port: 3000,
     open: false
   },
+  build: {
+    outDir: '../../data',
+    emptyOutDir: false,
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/js/[name].[hash].js',
+        chunkFileNames: 'assets/js/[name].[hash].js',
+        assetFileNames: 'assets/[ext]/[name].[hash].[ext]'
+      }
+    }
+  },
   css: {
     postcss: './postcss.config.cjs'
   },
